@@ -56,7 +56,7 @@ where p.zeny + p.muzi > 20000 and p.rok = 2011 and p.zeny > p.muzi
 order by pomer desc
 limit 10;
 -- 10
-select k.nazov as kraj, count(o.nazov) as okres, count(o2.nazov) as obec, sum(p.zeny + p.muzi) as populacia from kraj k
+select k.nazov as kraj, count(o2.nazov) as obec, sum(p.zeny + p.muzi) as populacia from kraj k
 inner join okres o on k.id = o.id_kraj
 inner join obec o2 on o.id = o2.id_okres
 inner join populacia p on o2.id = p.id_obec and p.rok = '2012'
